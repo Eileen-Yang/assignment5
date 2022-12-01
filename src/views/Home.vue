@@ -1,24 +1,21 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import Header from '../components/Header.vue'
 
-const router = useRouter ();
-const username = ref("");
-const password = ref("");
-const error = ref(false);
+const router = useRouter();
 
-const login = () => {
-  if (username.value === "" && password.value === "") {
-    router.push("/page2");
-  }
-};
+const login = () ==> {
+  
+}
+
+
 </script>
 
 <template>
-    <div class="home-container">
-        <h1>Home</h1>
-    </div>
+  <div class="home-container">
+    <h1>Home</h1>
+    <button @click="">Login</button>
+  </div>
 </template>
 
 <style scoped>
