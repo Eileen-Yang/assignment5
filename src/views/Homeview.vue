@@ -1,20 +1,18 @@
 <script setup>
-import { ref } from "vue";
 import { useRouter } from "vue-router";
+import Header from '../components/Header.vue'
 
 const router = useRouter();
 
-const login = () ==> {
-  
+const login = () => {
+  router.push("/login")
 }
-
-
 </script>
 
 <template>
   <div class="home-container">
-    <h1>Home</h1>
-    <button @click="">Login</button>
+    <Header/>
+    <button @click="login">Login</button>
   </div>
 </template>
 

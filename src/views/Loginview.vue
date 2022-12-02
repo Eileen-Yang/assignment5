@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import Header from '../components/Header.vue'
 
 const router = useRouter();
 const username = ref("");
@@ -9,7 +10,7 @@ const error = ref(false);
 
 const login = () => {
   if (username.value === "tmdb" && password.value === "movies") {
-    router.push("/login");
+    router.push("/purchase");
   } else {
     error.value = true;
   }
@@ -18,14 +19,14 @@ const login = () => {
 </script>
 
 <template>
-  <div class="home-container">
-    <h1>Home</h1>
+  <div class="login-container">
+    <Header/>
     <form @submit.prevent="login()">
       <input type="text" v-model="username" placeholder="Username" />
       <br/>
       <input type="password" v-model="password" placeholder="Password" />
       <br/>
-      <input type="submit" value="Login" />
+      <button id="login">Login</button>
     </form>
     <div v-if="error" class="error">
       <p>Incorrect username or password. Type the correct username and password, and try again.</p>
