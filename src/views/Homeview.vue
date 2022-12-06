@@ -1,21 +1,21 @@
 <script setup>
 import { useRouter } from "vue-router";
-import Header from '../components/Header.vue'
+import Siteheader from '../components/Siteheader.vue'
+import Sitehero from '../components/Sitehero.vue'
 
 const router = useRouter();
 
-const login = () => {
-  router.push("/login")
-}
 </script>
 
 <template>
   <div class="home-container">
-    <Header/>
-    <button @click="login">Login</button>
+    <Siteheader />
+    <Sitehero />
   </div>
 </template>
 
 <style scoped>
-
+  * {
+    margin-top: 2%;
+  }
 </style>

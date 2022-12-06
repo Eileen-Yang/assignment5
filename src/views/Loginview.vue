@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import Header from '../components/Header.vue'
 
 const router = useRouter();
 const username = ref("");
@@ -20,12 +19,14 @@ const login = () => {
 
 <template>
   <div class="login-container">
-    <Header/>
+    <h1>Company Name</h1>
     <form @submit.prevent="login()">
+    <label>Login</label>
+    <br />
       <input type="text" v-model="username" placeholder="Username" />
-      <br/>
+      <br />
       <input type="password" v-model="password" placeholder="Password" />
-      <br/>
+      <br />
       <button id="login">Login</button>
     </form>
     <div v-if="error" class="error">
@@ -35,5 +36,24 @@ const login = () => {
 </template>
 
 <style scoped>
+* {
+  text-align: center;
+}
 
+h1 {
+  text-align: left;
+}
+
+label {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+form {
+  width: 100%
+}
+
+p {
+  background-color: rgba(255, 5, 5, 0.247);
+}
 </style>
