@@ -38,6 +38,7 @@ const login = () => {
 <style scoped>
 * {
   text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 h1 {
@@ -45,12 +46,21 @@ h1 {
 }
 
 label {
-  font-size: xx-large;
+  font-size: 400%;
   font-weight: bold;
 }
 
 form {
   width: 100%
+}
+
+input {
+  color: blue;
+  font-size: 200%;
+}
+
+button {
+  font-size: 200%;
 }
 
 p {
