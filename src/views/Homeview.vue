@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from "vue-router";
-import Siteheader from '../components/Siteheader.vue'
-import Sitehero from '../components/Sitehero.vue'
+import SiteHeader from '../components/SiteHeader.vue'
+import SiteHero from '../components/SiteHero.vue'
 
 const router = useRouter();
 
@@ -9,8 +9,8 @@ const router = useRouter();
 
 <template>
   <div class="home-container">
-    <Siteheader />
-    <Sitehero />
+    <SiteHeader />
+    <SiteHero />
   </div>
 </template>
 

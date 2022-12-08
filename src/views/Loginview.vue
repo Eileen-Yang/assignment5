@@ -14,7 +14,6 @@ const login = () => {
     error.value = true;
   }
 };
-
 </script>
 
 <template>
