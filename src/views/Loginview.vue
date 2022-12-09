@@ -20,13 +20,13 @@ const login = () => {
   <div class="login-container">
     <h1>Company Name</h1>
     <form @submit.prevent="login()">
-    <label>Login</label>
+    <label>LOGIN</label>
     <br />
       <input type="text" v-model="username" placeholder="Username" />
       <br />
       <input type="password" v-model="password" placeholder="Password" />
       <br />
-      <button id="login">Login</button>
+      <button id="login">LOGIN</button>
     </form>
     <div v-if="error" class="error">
       <p>Incorrect username or password. Type the correct username and password, and try again.</p>
@@ -54,8 +54,11 @@ form {
 }
 
 input {
-  color: blue;
+  color: white;
   font-size: 200%;
+  background-color: #c5c6c7;
+  padding:1%;
+  border-color: white;
 }
 
 button {

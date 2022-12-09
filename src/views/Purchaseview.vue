@@ -19,7 +19,7 @@ const getMovies = async () => {
     params: {
       api_key: "289d7511f89338dfaa9d5bc06621094c",
     },
-  })).data['result'];
+  })).data['movies'];
 };
 
 const showModal = ref(false);
@@ -33,16 +33,16 @@ const openModal = (id) => {
 const closeModal = () => {
   showModal.value = false;
 };
+
 </script>
 
 <template>
-  <h1>Trending Movies</h1>
-  <div v-if="getMovies()" v-for="result in response" class="movies-container">
-    <img v-bind:src="(`https://image.tmdb.org/t/p/w500/` + result.poster_path)" />
-    <div>
-    </div>
-    <SiteModal v-if="showModal" @toggleModal="closeModal()" :id="selectedId" />
+  <div>
+    <h1>Trending Movies</h1>
+    <img v-for="movies in response" :src="(`https://image.tmdb.org/t/p/w500/` + movies.poster_path)"
+      @click="openModal(id)" />
   </div>
+  <SiteModal v-if="showModal" @toggleModal="closeModal()" :id="selectedId" />
 </template>
 
 <style scoped>
