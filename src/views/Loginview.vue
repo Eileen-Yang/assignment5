@@ -17,8 +17,8 @@ const login = () => {
 </script>
 
 <template>
+  <h1>Company Name</h1>
   <div class="login-container">
-    <h1>Company Name</h1>
     <form @submit.prevent="login()">
     <label>LOGIN</label>
     <br />
@@ -37,11 +37,16 @@ const login = () => {
 <style scoped>
 * {
   text-align: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.login-container {
+  margin-top: 15%;
 }
 
 h1 {
   text-align: left;
+  font-size: 300%;
+  padding-left: 2%;
 }
 
 label {
@@ -63,9 +68,16 @@ input {
 
 button {
   font-size: 200%;
+  background-color: #c5c6c7;
+  color: white;
+  border-radius: 12px;
+  margin-top: 1%;
 }
 
 p {
-  background-color: rgba(255, 5, 5, 0.247);
+  background-color: rgba(255, 255, 255, 0.247);
+  width: fit-content;
+  margin-left: 14%;
+  font-size: x-large;
 }
 </style>

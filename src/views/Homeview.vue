@@ -2,6 +2,7 @@
 import { useRouter } from "vue-router";
 import SiteHeader from '../components/SiteHeader.vue'
 import SiteHero from '../components/SiteHero.vue'
+import SiteFooter from '../components/SiteFooter.vue'
 
 const router = useRouter();
 
@@ -9,13 +10,18 @@ const router = useRouter();
 
 <template>
   <div class="home-container">
-    <SiteHeader />
-    <SiteHero />
+    <Suspense>
+      <SiteHeader />
+    </Suspense>
+    <Suspense>
+      <SiteHero />
+    </Suspense>
+    <Suspense>
+      <SiteFooter />
+    </Suspense>
   </div>
 </template>
 
 <style scoped>
-  * {
-    margin-top: 2%;
-  }
+
 </style>

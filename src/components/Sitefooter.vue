@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <h1></h1>
+  <h1>© 2022 Company Name, Inc.</h1>
 </template>
 
 <style scoped>
