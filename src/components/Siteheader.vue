@@ -3,7 +3,7 @@
 
 <template>
   <div class="header-container">
-    <h1>Company Name</h1>
+    <h1>XYZ MOVIES</h1>
     <RouterLink to="/login" custom v-slot="{ navigate }">
       <button @click="navigate" role="link">LOGIN</button>
     </RouterLink>

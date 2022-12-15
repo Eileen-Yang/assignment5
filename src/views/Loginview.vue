@@ -17,7 +17,7 @@ const login = () => {
 </script>
 
 <template>
-  <h1>Company Name</h1>
+  <h1>XYZ MOVIES</h1>
   <div class="login-container">
     <form @submit.prevent="login()">
     <label>LOGIN</label>
