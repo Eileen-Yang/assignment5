@@ -1,6 +1,15 @@
 <script setup>
+import axios from "axios"
+
 const props = defineProps(["id"]);
 const emits = defineEmits(["toggleModal"]);
+
+let data = (await axios.get(`https://api.themoviedb.org/3/trending/movie/week`, {
+  params: {
+    api_key: '289d7511f89338dfaa9d5bc06621094c',
+  }
+})).data.results;
+console.log(data);
 </script>
 
 <template>
@@ -8,7 +17,7 @@ const emits = defineEmits(["toggleModal"]);
     <div class="modal-outer-container" @click.self="emits('toggleModal')">
       <div class="modal-inner-container">
         <button class="close-button" @click="emits('toggleModal')">X</button>
-        <h1>{{ props.id }}</h1>
+        <h1>{{ data.overview }}</h1>
       </div>
     </div>
   </Teleport>
