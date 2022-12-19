@@ -18,11 +18,12 @@
 
 .header-container {
   display: flex;
+  justify-content: space-between;
+  margin-top: 0.5%;
+  margin-left: 0.05%;
 }
 
 h1 {
-  padding-left: 1%;
-  padding-right: 64%;
   font-size: 300%;
 }
 

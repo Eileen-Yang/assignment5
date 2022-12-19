@@ -1,15 +1,17 @@
 <script setup>
-import axios from "axios"
+import axios from "axios";
 
 const props = defineProps(["id"]);
 const emits = defineEmits(["toggleModal"]);
 
-let data = (await axios.get(`https://api.themoviedb.org/3/trending/movie/week`, {
+let data = (await axios.get(`https://api.themoviedb.org/3/movie/${props.id}`, {
   params: {
     api_key: '289d7511f89338dfaa9d5bc06621094c',
+    append_to_response: "videos",
   }
-})).data.results;
+})).data;
 console.log(data);
+
 </script>
 
 <template>
@@ -17,13 +19,21 @@ console.log(data);
     <div class="modal-outer-container" @click.self="emits('toggleModal')">
       <div class="modal-inner-container">
         <button class="close-button" @click="emits('toggleModal')">X</button>
-        <h1>{{ data.overview }}</h1>
+        <div class="movie-information">
+          <h1>{{ data.title }}</h1>
+          <h1>Release Date: {{data.release_date}}</h1>
+          <img :src="`https://image.tmdb.org/t/p/w500/${data.poster_path}`" />
+        </div>
       </div>
     </div>
   </Teleport>
 </template>
 
 <style scoped>
+* {
+  background-color: #1F2123;
+}
+
 .modal-outer-container {
   position: fixed;
   top: 0;
@@ -38,7 +48,6 @@ console.log(data);
 }
 
 .modal-outer-container .modal-inner-container {
-  background-color: #1F2123;
   color: white;
   width: clamp(280px, 100%, 800px);
   height: 400px;
@@ -55,4 +64,5 @@ console.log(data);
   font-size: 1.25rem;
   color: white;
 }
+
 </style>

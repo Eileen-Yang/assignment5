@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import SiteFooter from '../components/SiteFooter.vue'
 
 const router = useRouter();
 const username = ref("");
@@ -20,8 +21,8 @@ const login = () => {
   <h1>XYZ MOVIES</h1>
   <div class="login-container">
     <form @submit.prevent="login()">
-    <label>LOGIN</label>
-    <br />
+      <label>LOGIN</label>
+      <br />
       <input type="text" v-model="username" placeholder="Username" />
       <br />
       <input type="password" v-model="password" placeholder="Password" />
@@ -32,6 +33,9 @@ const login = () => {
       <p>Incorrect username or password. Type the correct username and password, and try again.</p>
     </div>
   </div>
+  <Suspense>
+    <SiteFooter />
+  </Suspense>
 </template>
 
 <style scoped>
@@ -47,6 +51,7 @@ h1 {
   text-align: left;
   font-size: 300%;
   padding-left: 2%;
+  margin-top: 2.6%;
 }
 
 label {
@@ -62,7 +67,7 @@ input {
   color: white;
   font-size: 200%;
   background-color: #c5c6c7;
-  padding:1%;
+  padding: 1%;
   border-color: white;
 }
 
@@ -80,4 +85,5 @@ p {
   margin-left: 14%;
   font-size: x-large;
 }
+
 </style>
