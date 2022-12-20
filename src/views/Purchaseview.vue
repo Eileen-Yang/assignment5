@@ -2,6 +2,7 @@
 import axios from "axios";
 import { ref } from 'vue';
 import SiteModal from '../components/SiteModal.vue';
+import SiteFooter from '../components/SiteFooter.vue'
 
 let data = (await axios.get(`https://api.themoviedb.org/3/trending/movie/day`, {
   params: {
@@ -25,11 +26,14 @@ const closeModal = () => {
 
 <template>
   <h1>TRENDING MOVIES</h1>
-  <div>
+  <div class="purchase-container">
     <img v-for="movie in data" @click="openModal(movie.id)" class="poster"
       :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`" />
   </div>
-    <SiteModal v-if="showModal" @toggleModal="closeModal()" :id="selectedId" />
+  <SiteModal v-if="showModal" @toggleModal="closeModal()" :id="selectedId" />
+  <Suspense>
+    <SiteFooter />
+  </Suspense>
 </template>
 
 <style scoped>
@@ -40,10 +44,16 @@ h1 {
 }
 
 .poster {
-  display: grid
+  width: 24%;
+  aspect-ratio: 2/3;
+  padding: 0.5%;
 }
 
 img:hover {
   cursor: pointer;
+}
+
+.SiteFooter {
+  font-size: 100%;
 }
 </style>

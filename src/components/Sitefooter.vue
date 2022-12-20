@@ -3,9 +3,11 @@
 </script>
 
 <template>
-  <h1>© 2022 XYZ MOVIES, Inc.</h1>
+  <h2>© 2022 XYZ MOVIES, Inc.</h2>
 </template>
 
 <style scoped>
-
+h2 {
+  font-size: 100%;
+}
 </style>

@@ -19,10 +19,11 @@ console.log(data);
     <div class="modal-outer-container" @click.self="emits('toggleModal')">
       <div class="modal-inner-container">
         <button class="close-button" @click="emits('toggleModal')">X</button>
+        <img :src="`https://image.tmdb.org/t/p/w500/${data.poster_path}`" />
         <div class="movie-information">
-          <h1>{{ data.title }}</h1>
-          <h1>Release Date: {{data.release_date}}</h1>
-          <img :src="`https://image.tmdb.org/t/p/w500/${data.poster_path}`" />
+          <h2>{{ data.title }}</h2>
+          <h3>Release Date: {{ data.release_date }}</h3>
+          <h3>Overview: {{ data.overview }}</h3>
         </div>
       </div>
     </div>
@@ -32,6 +33,7 @@ console.log(data);
 <style scoped>
 * {
   background-color: #1F2123;
+  margin-top: 0%;
 }
 
 .modal-outer-container {
@@ -52,6 +54,7 @@ console.log(data);
   width: clamp(280px, 100%, 800px);
   height: 400px;
   position: relative;
+  display: flex;
 }
 
 .modal-outer-container .modal-inner-container .close-button {
@@ -65,4 +68,24 @@ console.log(data);
   color: white;
 }
 
+h2 {
+  font-size: 200%;
+}
+
+h3 {
+  color: white;
+}
+
+img {
+  aspect-ratio: 2/3;
+  padding: 2%;
+}
+
+.movie-information {
+  padding-top: 2%;
+  padding-right: 2%;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
 </style>
