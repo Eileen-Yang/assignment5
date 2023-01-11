@@ -12,6 +12,10 @@ let data = (await axios.get(`https://api.themoviedb.org/3/movie/${props.id}`, {
 })).data;
 console.log(data);
 
+function Opentab() {
+  window.open(url);
+}
+
 </script>
 
 <template>
@@ -24,6 +28,7 @@ console.log(data);
           <h2>{{ data.title }}</h2>
           <h3>Release Date: {{ data.release_date }}</h3>
           <h3>Overview: {{ data.overview }}</h3>
+          <h4 @click="Opentab"><a :href="`https://www.youtube.com/watch?v=${data.videos.results[0].key}`" target="_blank">Movie Trailer</a></h4>
         </div>
       </div>
     </div>

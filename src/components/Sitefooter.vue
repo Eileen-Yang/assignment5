@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <h2>© 2022 XYZ MOVIES, Inc.</h2>
+  <h2>© 2023 XYZ MOVIES, Inc.</h2>
 </template>
 
 <style scoped>

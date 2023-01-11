@@ -33,9 +33,6 @@ const login = () => {
       <p>Incorrect username or password. Type the correct username and password, and try again.</p>
     </div>
   </div>
-  <Suspense>
-    <SiteFooter />
-  </Suspense>
 </template>
 
 <style scoped>
