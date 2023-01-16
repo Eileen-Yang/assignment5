@@ -18,7 +18,6 @@ const login = () => {
 </script>
 
 <template>
-  <h1>XYZ MOVIES</h1>
   <div class="login-container">
     <form @submit.prevent="login()">
       <label>LOGIN</label>
@@ -42,13 +41,6 @@ const login = () => {
 
 .login-container {
   margin-top: 15%;
-}
-
-h1 {
-  text-align: left;
-  font-size: 300%;
-  padding-left: 2%;
-  margin-top: 2.6%;
 }
 
 label {
